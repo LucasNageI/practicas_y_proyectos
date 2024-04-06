@@ -1,2 +1,3 @@
-const email = document.getElementById("Email");
-const password = document.getElementById("Password");
+const email = document.getElementById("Email").value;
+const password = document.getElementById("Password").value;
+
