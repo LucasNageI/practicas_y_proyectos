@@ -50,3 +50,19 @@ else if(operacion === "division"){
 for (let i = 0; i <= 10 ; i += 2) {
     console.log(i)
 }
+
+/* suma de los primeros 5 numeros naturales */
+
+let suma = 0
+
+for (i = 1 ; i <=5; i = i + 1){
+    suma += i
+}
+
+console.log(suma)
+
+/* contador */
+
+for (i = 1; i <= 5 ; i += 1) {
+    console.log(i)
+}
