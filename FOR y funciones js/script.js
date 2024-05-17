@@ -66,3 +66,24 @@ console.log(suma)
 for (i = 1; i <= 5 ; i += 1) {
     console.log(i)
 }
+
+/* explicar el siguiente codigo */
+
+function validarNumeros /* se declara una funcion llamada "validarNumeros" */ ()/* no se especifican parametros */{
+
+    let num = prompt("ingrese un numero") /* se crea una variable llamada "num" que va a obtener un dato por medio de un prompt */
+
+    while(!num || isNaN(num)){ /* bucle while, que lo que hace es que cada vez que el valor de num sea falsy, o NaN, se ejecute el codigo dentro de este while */
+        num = prompt("error: vuelva a ingresar el numero") /* reasigna a la variable un valor nuevo de prompr, donde se pide que nuevamente se ingrese un numero */
+    }
+
+    num = Number(num) /* se pasa el string numerico ingresado del prompt al tipo de dato Number */
+
+    console.log(num) /* muestra en consola la variable num, que contiene el valor numerico del dato ingresado */
+
+    return num /* retorna la variable num */
+}
+
+validarNumeros() /* se invoca a la funcion, sin parametros porque la funcion no los especifico */
+
+/* basicamente, esta funcion recibe un dato de un prompt que almacena en una variable, verifica que no sea NUll, ni undefined, ni "", ni NaN, para luego cambiar el tipo de dato de string a number, y despues mostrar en consola la variable, ademas de retornar el valor de la variable  */
