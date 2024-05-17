@@ -1,4 +1,4 @@
-function suma (numero1, numero2) {
+/* function suma (numero1, numero2) {
     let resultadoSuma = (numero1 + numero2)
     return (resultadoSuma)
 }
@@ -43,4 +43,10 @@ else if(operacion === "division"){
     let numero1 = Number(prompt("Ingrese el primer numero a dividir"))
     let numero2 = Number(prompt("Ingrese el segundo numero"))
     console.log(division(numero1, numero2))
+} */
+
+/* imprime todos los numeros pares del 1 al 10 */
+
+for (let i = 0; i <= 10 ; i += 2) {
+    console.log(i)
 }
