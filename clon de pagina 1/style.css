@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --white-letters: #ffffff;
+}
+
+body {
+    background-color: #000000;
+}
+
+.header {
+    height: 5ch;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.header .logo .logo-title {
+    color: var(--white-letters);
+}
+
+.header .buttons-container {
+    display: flex;
+    gap: 8px;
+}
+
+.header .buttons-container .request {
+    cursor: pointer;
+    background-color: #000000;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: var(--white-letters);
+    padding: 5px;
+}
+
+.header .buttons-container .sign-in {
+    cursor: pointer;
+    background-color: #4C5FD5;
+    border: 1px solid #4C5FD5;
+    border-radius: 5px;
+    color: var(--white-letters);
+    padding: 5px;
+}
+
+.main .hero-section {
+    background-color: #dadbf1;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main .hero-section .title h1{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.main .hero-section .search-container .search{
+    height: 32px;
+    width: 50vw;
+    padding: 10px;
+}
+
+.main .help-section {
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+.footer {
+    color: var(--white-letters);
+}
