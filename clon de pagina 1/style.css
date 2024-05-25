@@ -91,7 +91,6 @@ a {
     background-color: #ffffff;
     height: 80vh;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -122,6 +121,7 @@ a {
     color: var(--white-letters);
     height: 40vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: start;
     justify-content: space-between;
 }
@@ -150,6 +150,69 @@ a {
     margin-top: 20px;
 }
 
-.footer .copyright {
-    margin-top: 200px;
+
+/* media queries: 760px 320px */
+
+@media screen and (max-width: 1050px) {
+    .main .hero-section .search-container .search{
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .main .hero-section .search-container .search{
+        width: 70vw;
+    }
+
+    .main .help-section {
+        flex-direction: column;
+        gap: 30px;
+        height: 100vh;
+    }
+
+    .main .help-section .wrappers {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .main .help-section .help-container {
+        gap: 10px;
+        width: 70vw;
+    }
+    .footer .footer-content {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .header .logo .logo-title {
+        font-size: 14px;
+    }
+
+    .header .buttons-container .request {
+        width: 25vw;
+        padding: 2px;
+        font-size: 14px;
+    }
+    
+    .header .buttons-container .sign-in {
+        width: 25vw;
+        padding: 2px;
+        font-size: 14px;
+    }
+
+    .main .hero-section .title h1{
+        font-size: 35px;
+    }
+
+    .footer .footer-content {
+        width: 100vw;
+    }
 }
