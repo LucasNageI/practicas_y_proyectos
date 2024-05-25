@@ -5,20 +5,28 @@
     font-family: sans-serif;
 }
 
-:root {
-    --white-letters: #ffffff;
-}
-
 body {
     background-color: #000000;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --white-letters: #ffffff;
+}
+
 .header {
-    height: 5ch;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0px 13vw;
 }
 
 .header .logo .logo-title {
@@ -31,21 +39,28 @@ body {
 }
 
 .header .buttons-container .request {
+    height: 35px;
     cursor: pointer;
     background-color: #000000;
     border: 1px solid white;
     border-radius: 5px;
     color: var(--white-letters);
-    padding: 5px;
+    padding: 5px 20px;
 }
 
 .header .buttons-container .sign-in {
     cursor: pointer;
     background-color: #4C5FD5;
-    border: 1px solid #4C5FD5;
+    border: 1px solid #4c5fd5;
     border-radius: 5px;
     color: var(--white-letters);
-    padding: 5px;
+    padding: 5px 20px;
+}
+
+.header .buttons-container .sign-in:hover {
+    transition-duration: 0.5s;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .main .hero-section {
@@ -55,25 +70,86 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 4vh;
 }
 
 .main .hero-section .title h1{
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 500;
 }
 
 .main .hero-section .search-container .search{
-    height: 32px;
-    width: 50vw;
+    height: 6vh;
+    width: 30vw;
     padding: 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .main .help-section {
     background-color: #ffffff;
-    height: 100vh;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.main .help-section .wrappers {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 70vw;
+}
+
+.main .help-section .help-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 35vw;
+    font-size: 14px;
+}
+
+.main .help-section .help-container a {
+    text-decoration: none;
+    color: #4c5fd5;
 }
 
 .footer {
     color: var(--white-letters);
+    height: 40vh;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 60px 0px 60px;
+    font-size: 14px;
+}
+
+.footer .footer-content a {
+    color: white;
+    font-size: 10px;
+}
+
+.footer .footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-content .contact-us-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.footer .copyright {
+    margin-top: 200px;
 }
