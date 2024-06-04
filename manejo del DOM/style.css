@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(37, 37, 37);
+}
+
+.main .hero-section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .hero-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.main .hero-section .container #title {
+    color: white;
+}
+
+.main .hero-section .container #list{
+    color: white;
+}
