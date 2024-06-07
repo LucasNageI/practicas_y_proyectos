@@ -106,3 +106,25 @@ const devolverPalabrasLargas = (palabras, limite) => {
 }
 
 console.log(devolverPalabrasLargas(["hola", "como", "te", "va", "?"], 3))
+
+/* devolver mayores de edad */
+
+const personas = [
+    {
+        nombre: "gabriel",
+        edad: 17
+    },    {
+        nombre: "manuel",
+        edad: 19
+    },    {
+        nombre: "juan",
+        edad: 20
+    },    {
+        nombre: "lucas",
+        edad: 22
+    }
+]
+
+const filtrar_menores = personas.filter((persona) => persona.edad >= 18)
+
+console.log(filtrar_menores)
