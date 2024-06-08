@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(37, 67, 54);
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: small;
+    color: white;
+}
+
+input {
+    border: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main .section .form {
+    background-color: rgb(107, 138, 122);
+    border-radius: 30px;
+    margin-top: 20vh;
+    height: 60vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .section .form .title {
+    background-color: rgba(37, 67, 54, 0.5);
+    color: white;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    cursor: default;
+}
+
+.main .section .form .user-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.main .section .form .user-data-container .input {
+    background-color: rgba(37, 67, 54, 0.5);
+    color: rgb(204, 204, 204);
+    border-radius: 10px;
+    margin-top: 3px;
+    height: 4vh;
+    width: 25vw;
+    padding: 5px;
+}
+
+.main .section .form .submit-btn {
+    background-color: rgba(37, 67, 54, 0.5);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    height: 6vh;
+    width: 8vw;
+    cursor: pointer;
+}
