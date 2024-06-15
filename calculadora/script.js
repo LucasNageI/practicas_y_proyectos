@@ -2,8 +2,6 @@ const formulario = document.getElementById("formulario")
 
 let string_num = ""
 
-let numero = ""
-
 const ACCIONES = {
     SUMAR: {
         accion: (a, b) => a + b
@@ -17,7 +15,7 @@ const ACCIONES = {
     DIVIDIR: {
         accion: (a, b) => a / b
     },
-    AC: {
+    RESET: {
         accion: () => {
             string_num.replaceAll(string_num, "") 
             string_num = ""
@@ -31,35 +29,63 @@ const ACCIONES = {
     }
 }
 
-const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log(event.target)
-}
+let numero = ""
+let resultado_operacion = ""
+let operacion = []
 
 const handleCalculardora = (event) => {
 
-    if((typeof(Number(event.target.value) === 1, 2, 3, 4, 5, 6, 7, 8, 9, 0))){
-        numero = event.target.value
-        if(numero === undefined || numero === AC || numero === DEL){
+    numero = event.target.value
+
+    if((numero === "1"||numero === "2"||numero === "3"||numero === "4"||numero === "5"||numero === "6"||numero === "7"||numero === "8" ||numero === "9"||numero === "0")){
+        string_num = string_num + numero
+        resultado.innerText = string_num
+    }
+
+    else if(numero === undefined || numero === "=" || numero === "RESET" || numero === "DEL"){
+        string_num = string_num + ""
+        if(numero === "DEL"){
+            ACCIONES.DEL.accion()
+            resultado.innerText = string_num
+        }
+        else if(numero === "RESET"){
+            ACCIONES.RESET.accion()
+            resultado.innerText = string_num
+        }
+    }
+
+    else{
+        if(string_num.includes("+") || string_num.includes("-") || string_num.includes("x") || string_num.includes("/") || string_num === ""){
             string_num = string_num + ""
             resultado.innerText = string_num
         }
         else{
-            if(event.target === formulario.DEL){
-                ACCIONES.DEL.accion()
-                resultado.innerText = string_num
-            }
-            else if(event.target === formulario.AC){
-                ACCIONES.AC.accion()
-                resultado.innerText = string_num
-            }
-            else{
-            string_num = string_num + numero
+            string_num = string_num + " " + numero + " "
             resultado.innerText = string_num
-            }
         }
     }
+}
 
+const handleSubmit = (event) => {
+    event.preventDefault()
+    operacion = string_num.split(" ")
+    if(operacion[1] === "+"){
+        resultado_operacion = ACCIONES.SUMAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        resultado.innerText = resultado_operacion
+    }
+    else if(operacion[1] === "-"){
+        resultado_operacion = ACCIONES.RESTAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        resultado.innerText = resultado_operacion
+    }
+    else if(operacion[1] === "x"){
+        resultado_operacion = ACCIONES.MULTIPLICAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        resultado.innerText = resultado_operacion
+    }
+    else if(operacion[1] === "/"){
+        resultado_operacion = ACCIONES.DIVIDIR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        resultado.innerText = resultado_operacion
+    }
+    string_num = ""
 }
 
 formulario.addEventListener("submit", handleSubmit)
