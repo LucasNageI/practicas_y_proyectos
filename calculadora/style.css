@@ -6,23 +6,28 @@ font-family: sans-serif;
 }
 
 body {
-    background-color: rgb(116, 105, 182);
+    background-color: rgb(216, 239, 211);
     display: flex;
     justify-content: center;
     margin-top: 10%;
 }
 
 .span-container {
-    border-bottom: 2px solid black;
-    width: 200px;
+    border-top: 2px solid rgb(31, 121, 103);
+    border-bottom: 2px solid rgb(31, 121, 103);
+    width: 300px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.resultado {
+    color: rgb(31, 121, 103);
+}
+
 .formulario {
-    background-color: rgb(173, 136, 198);
+    background-color: rgb(149, 210, 179);
     width: 320px;
     height: 500px;
     padding: 10px;
@@ -31,6 +36,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.title {
+    color: rgb(31, 121, 103);
 }
 
 .filas {
@@ -42,6 +51,7 @@ body {
 .inputs-btn {
     width: 70px;
     height: 70px;
+    color: rgb(31, 121, 103);
     border-radius: 20px;
     border: none;
     font-size: 20px;
@@ -50,7 +60,7 @@ body {
 
 .inputs-btn:hover {
     transition: 0.3s;
-    background-color: rgb(225, 175, 209);
+    background-color: rgb(216, 239, 211);
 }
 
 .submit-btn {

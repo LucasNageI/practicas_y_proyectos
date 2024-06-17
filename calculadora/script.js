@@ -25,7 +25,10 @@ const ACCIONES = {
         accion: () => {
             let string_modificado = string_num.slice(0, -1)
             string_num = string_modificado
-        } 
+        }
+    },
+    NAN: {
+        accion: (numero) => isNaN(numero)
     }
 }
 
@@ -71,20 +74,37 @@ const handleSubmit = (event) => {
     operacion = string_num.split(" ")
     if(operacion[1] === "+"){
         resultado_operacion = ACCIONES.SUMAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        if(ACCIONES.NAN.accion(resultado_operacion)){
+            resultado_operacion = "error"
+            resultado.innerText = resultado_operacion
+        }
         resultado.innerText = resultado_operacion
     }
     else if(operacion[1] === "-"){
         resultado_operacion = ACCIONES.RESTAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        if(ACCIONES.NAN.accion(resultado_operacion)){
+            resultado_operacion = "error"
+            resultado.innerText = resultado_operacion
+        }
         resultado.innerText = resultado_operacion
     }
     else if(operacion[1] === "x"){
         resultado_operacion = ACCIONES.MULTIPLICAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        if(ACCIONES.NAN.accion(resultado_operacion)){
+            resultado_operacion = "error"
+            resultado.innerText = resultado_operacion
+        }
         resultado.innerText = resultado_operacion
     }
     else if(operacion[1] === "/"){
         resultado_operacion = ACCIONES.DIVIDIR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+        if(ACCIONES.NAN.accion(resultado_operacion)){
+            resultado_operacion = "error"
+            resultado.innerText = resultado_operacion
+        }
         resultado.innerText = resultado_operacion
     }
+
     string_num = ""
 }
 
