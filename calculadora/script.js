@@ -23,8 +23,15 @@ const ACCIONES = {
     },
     DEL: {
         accion: () => {
-            let string_modificado = string_num.slice(0, -1)
-            string_num = string_modificado
+            if(string_num.endsWith(" ")){
+                let string_modificado = string_num.slice(0, -3)
+                string_num = string_modificado
+            }
+            else{
+                let string_modificado = string_num.slice(0, -1)
+                string_num = string_modificado
+            }
+
         }
     },
     NAN: {
@@ -45,21 +52,25 @@ const handleCalculardora = (event) => {
         resultado.innerText = string_num
     }
 
-    else if(numero === undefined || numero === "=" || numero === "RESET" || numero === "DEL"){
+    else if(numero === undefined || numero === "=" || numero === "RST" || numero === "DEL"){
         string_num = string_num + ""
         if(numero === "DEL"){
             ACCIONES.DEL.accion()
             resultado.innerText = string_num
         }
-        else if(numero === "RESET"){
+        else if(numero === "RST"){
             ACCIONES.RESET.accion()
             resultado.innerText = string_num
         }
     }
 
     else{
-        if(string_num.includes("+") || string_num.includes("-") || string_num.includes("x") || string_num.includes("/") || string_num === ""){
+        if(string_num.includes(" + ") || string_num.includes(" - ") || string_num.includes(" x ") || string_num.includes(" / ") || string_num === ""){
             string_num = string_num + ""
+            resultado.innerText = string_num
+        }
+        else if(numero === "."){
+            string_num = string_num + "."
             resultado.innerText = string_num
         }
         else{
