@@ -26,6 +26,10 @@ body {
     color: rgb(31, 121, 103);
 }
 
+.operacion {
+    color: rgb(31, 121, 103);
+}
+
 .formulario {
     background-color: rgb(149, 210, 179);
     width: 320px;
@@ -41,7 +45,6 @@ body {
 .title {
     color: rgb(31, 121, 103);
     padding: 0px 20px;
-    border-bottom: 2px solid rgb(31, 121, 103);
 }
 
 .filas {

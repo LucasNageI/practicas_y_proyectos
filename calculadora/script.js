@@ -41,7 +41,7 @@ const ACCIONES = {
 
 let numero = ""
 let resultado_operacion = ""
-let operacion = []
+let operacion_ingresada = []
 
 const handleCalculardora = (event) => {
 
@@ -49,70 +49,74 @@ const handleCalculardora = (event) => {
 
     if((numero === "1"||numero === "2"||numero === "3"||numero === "4"||numero === "5"||numero === "6"||numero === "7"||numero === "8" ||numero === "9"||numero === "0")){
         string_num = string_num + numero
-        resultado.innerText = string_num
+        operacion.innerText = string_num
     }
 
     else if(numero === undefined || numero === "=" || numero === "RST" || numero === "DEL"){
         string_num = string_num + ""
         if(numero === "DEL"){
             ACCIONES.DEL.accion()
-            resultado.innerText = string_num
+            operacion.innerText = string_num
         }
         else if(numero === "RST"){
             ACCIONES.RESET.accion()
-            resultado.innerText = string_num
+            operacion.innerText = string_num
         }
     }
 
     else{
         if(string_num.includes(" + ") || string_num.includes(" - ") || string_num.includes(" x ") || string_num.includes(" / ") || string_num === ""){
             string_num = string_num + ""
-            resultado.innerText = string_num
+            operacion.innerText = string_num
         }
         else if(numero === "."){
             string_num = string_num + "."
-            resultado.innerText = string_num
+            operacion.innerText = string_num
         }
         else{
             string_num = string_num + " " + numero + " "
-            resultado.innerText = string_num
+            operacion.innerText = string_num
         }
     }
 }
 
 const handleSubmit = (event) => {
     event.preventDefault()
-    operacion = string_num.split(" ")
-    if(operacion[1] === "+"){
-        resultado_operacion = ACCIONES.SUMAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+    operacion_ingresada = string_num.split(" ")
+    if(operacion_ingresada[1] === "+"){
+        resultado_operacion = ACCIONES.SUMAR.accion(parseFloat(operacion_ingresada[0]), parseFloat(operacion_ingresada[2]))
         if(ACCIONES.NAN.accion(resultado_operacion)){
             resultado_operacion = "error"
             resultado.innerText = resultado_operacion
         }
         resultado.innerText = resultado_operacion
     }
-    else if(operacion[1] === "-"){
-        resultado_operacion = ACCIONES.RESTAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+    else if(operacion_ingresada[1] === "-"){
+        resultado_operacion = ACCIONES.RESTAR.accion(parseFloat(operacion_ingresada[0]), parseFloat(operacion_ingresada[2]))
         if(ACCIONES.NAN.accion(resultado_operacion)){
             resultado_operacion = "error"
             resultado.innerText = resultado_operacion
         }
         resultado.innerText = resultado_operacion
     }
-    else if(operacion[1] === "x"){
-        resultado_operacion = ACCIONES.MULTIPLICAR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+    else if(operacion_ingresada[1] === "x"){
+        resultado_operacion = ACCIONES.MULTIPLICAR.accion(parseFloat(operacion_ingresada[0]), parseFloat(operacion_ingresada[2]))
         if(ACCIONES.NAN.accion(resultado_operacion)){
             resultado_operacion = "error"
             resultado.innerText = resultado_operacion
         }
         resultado.innerText = resultado_operacion
     }
-    else if(operacion[1] === "/"){
-        resultado_operacion = ACCIONES.DIVIDIR.accion(parseFloat(operacion[0]), parseFloat(operacion[2]))
+    else if(operacion_ingresada[1] === "/"){
+        resultado_operacion = ACCIONES.DIVIDIR.accion(parseFloat(operacion_ingresada[0]), parseFloat(operacion_ingresada[2]))
         if(ACCIONES.NAN.accion(resultado_operacion)){
             resultado_operacion = "error"
             resultado.innerText = resultado_operacion
         }
+        resultado.innerText = resultado_operacion
+    }
+    else{
+        resultado_operacion = "error"
         resultado.innerText = resultado_operacion
     }
 
